@@ -1,140 +1,141 @@
 body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    background-color: #0d0d0d;
-    color: #00ffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+  background-color: #0d0d0d;
+  color: #00ffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
 
 header {
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-    height: 70vh;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  height: 70vh;
 }
 
 h1 {
-    font-size: 3rem;
-    margin: 0;
-    opacity: 0;
-    animation: scaleFromOutside 1s ease-out forwards;
+  font-size: 3rem;
+  margin: 0;
+  opacity: 0;
+  animation: scaleFromOutside 1s ease-out forwards;
 }
 
 h2 {
-    font-size: 1.5rem;
-    margin: 0;
-    opacity: 0;
-    animation: slapOnScreen 1s ease-out forwards;
-    animation-delay: 1s; /* Delays h2 animation by 1 second */
+  font-size: 1.5rem;
+  margin: 0;
+  opacity: 0;
+  animation: slapOnScreen 1s ease-out forwards;
+  animation-delay: 1s; /* Delays h2 animation by 1 second */
 }
 
 nav {
-    margin-top: 40px;
-    opacity: 0;  /* Hide nav initially */
-    visibility: hidden;  /* Keep nav hidden initially */
-    animation: showNav 1s forwards;  /* Show nav after the delay */
-    animation-delay: 3s;  /* Delay of 5 seconds to show after animations of h1, h2, and footer */
+  margin-top: 40px;
+  opacity: 0; /* Hide nav initially */
+  visibility: hidden; /* Keep nav hidden initially */
+  animation: showNav 1s forwards; /* Show nav after the delay */
+  animation-delay: 3s; /* Delay of 5 seconds to show after animations of h1, h2, and footer */
 }
 
 nav a {
-    text-decoration: none;
-    color: #00ffff;
-    margin: 0 15px;
-    font-size: 1.2rem;
-    border: 2px solid #00ffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    visibility: hidden;  /* Hide individual links initially */
-    opacity: 0;
-    animation: fadeInLinks 1s ease-in-out forwards;
-    animation-delay: 3s;  /* Links show after the nav container */
+  color: #00ffff;
+  margin: 0 35px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-shadow: none; /* No shadow by default */
+  border: 2px solid #00ffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: text-shadow 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Transition font size too */
 }
 
 nav a:hover {
-    background-color: #00ffff;
-    color: #0d0d0d;
+  box-shadow: 0px 0px 10px #00ffff; /* Glowing effect on hover */
+  transform: scale(1.5); /* Slightly enlarges the text */
+  background-color: #00ffff;
+  color: #0d0d0d;
+  font-size: 1.5rem; /* Increase font size on hover */
 }
 
 footer {
-    margin-top: 40px;
-    font-size: 0.9rem;
-    color: #808080;
-    opacity: 0;
-    white-space: nowrap;  /* Prevent the text from wrapping */
-    overflow: hidden;  /* Hide the text before animation */
-    animation: typingEffect 3s steps(40) 2s forwards;  /* 2s delay after h1 & h2 animations */
-    text-align: center; /* Keep the text centered */
-    display: inline-block; /* Allow the text to be centered correctly */
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #808080;
+  opacity: 0;
+  white-space: nowrap; /* Prevent the text from wrapping */
+  overflow: hidden; /* Hide the text before animation */
+  animation: typingEffect 3s steps(40) 2s forwards; /* 2s delay after h1 & h2 animations */
+  text-align: center; /* Keep the text centered */
+  display: inline-block; /* Allow the text to be centered correctly */
 }
 
 /* Animation for the h2 (slap-on-screen effect) */
 @keyframes slapOnScreen {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Animation for the h1 (scale from larger than screen to normal size at center) */
 @keyframes scaleFromOutside {
-    0% {
-        transform: scale(5);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  0% {
+    transform: scale(5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Typing effect for the footer */
 @keyframes typingEffect {
-    from {
-        width: 0;
-        opacity: 1;
-    }
-    to {
-        width: 100%;
-        opacity: 1;
-    }
+  from {
+    width: 0;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
 }
 
 /* Show the nav after all animations */
 @keyframes showNav {
-    0% {
-        opacity: 0;
-        visibility: hidden;
-    }
-    100% {
-        opacity: 1;
-        visibility: visible;
-    }
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /* Fade-in animation for the nav links */
 @keyframes fadeInLinks {
-    0% {
-        opacity: 0;
-        visibility: hidden;
-    }
-    100% {
-        opacity: 1;
-        visibility: visible;
-    }
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
