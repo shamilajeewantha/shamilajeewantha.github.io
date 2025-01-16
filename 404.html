@@ -50,9 +50,8 @@
         display: inline-block;
         margin-top: 20px;
         padding: 12px 24px;
-        font-size: 18px;
-        color: #0d0d0d;
-        background: #00ffff;
+        color: #00ffff;
+        background: #0d0d0d;
         text-decoration: none;
         border-radius: 5px;
         box-shadow: 0 0 10px #00ffff;
@@ -60,26 +59,32 @@
       }
 
       a:hover {
-        background: #ff00ff;
-        box-shadow: 0 0 15px #ff00ff;
-        color: #fff;
+        background: #00ffff;
+        box-shadow: 0 0 15px #00ffff;
+        color: #0d0d0d;
       }
 
       .glitch {
         position: relative;
         display: inline-block;
-        animation: glitch 1s infinite alternate;
+        animation: knightRider 1.5s infinite alternate ease-in-out;
       }
 
-      @keyframes glitch {
+      @keyframes knightRider {
         0% {
-          transform: skew(-5deg);
+          text-shadow: -40px 0 10px #ff0000;
+        }
+        25% {
+          text-shadow: -20px 0 20px #ff4000;
         }
         50% {
-          transform: skew(5deg);
+          text-shadow: 0px 0 30px #ff8000;
+        }
+        75% {
+          text-shadow: 20px 0 20px #ff4000;
         }
         100% {
-          transform: skew(-5deg);
+          text-shadow: 40px 0 10px #ff0000;
         }
       }
 
