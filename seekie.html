@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seekie: A Crawler Robot</title>
+    <title>Seekie</title>
     <link rel="icon" href="images/tank.png" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
@@ -19,25 +19,36 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="aboutme.html">About Me</a>
     </nav>
 
     <header>
-      <h1>Seekie: A Crawler Robot</h1>
+      <h1>Seekie : A Crawler Robot</h1>
       <p>
-        A seeker robot that can be sent anywhere to explore and capture
-        real-time data!
+        So, I wanted a remote-controlled vehicle to mess around with. A car? Eh,
+        they're everywhere. A drone? Nah, too pricey (Well... Seekie's metal
+        chassis was kinda expensive, but not *that* much). A tank? Now we're
+        talking! But not just any tank – a blue one! And that's how Seekie came
+        to life. (Seekie comes from "seeker" 'cause it can move around and
+        "seek" things!) Wait, though... how am I gonna control this thing? I
+        don’t have a remote, and I have no idea how to make one either. But hold
+        up... don’t I have a phone? And I do know how to make an app! Yep!
+        that’s right! And that’s how the Seekie app was born. I can control
+        Seekie from my phone – go forward, backward, left, right, see through
+        its eyes [camera], and even make them blink [headlights]. Seekie can’t
+        drive himself yet, but with his camera and ToF sensors, maibe he soon
+        will!
       </p>
     </header>
 
     <section id="video">
-      <h2>Watch the Seekie in Action</h2>
+      <h2>Watch Seekie in Action</h2>
       <video width="80%" controls>
         <source src="videos/seekie_climb.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </section>
-    <h2>Seekie: Images</h2>
+    <h2>Seekie Gallery</h2>
     <section id="images">
       <div class="image-card">
         <img src="images/seekie_1.jpg" alt="Seekie Robot in Action" />
@@ -59,14 +70,38 @@
         <img src="images/seekie_5.jpg" alt="Seekie on a Mission" />
         <p>Seekie on a reconnaissance mission</p>
       </div>
-      <div class="image-card">
-        <img src="images/seekie_6.jpg" alt="Seekie Crawler in Motion" />
-        <p>Seekie crawling through narrow spaces</p>
+    </section>
+
+    <h2>Seekie life timeline</h2>
+    <section class="carousel">
+      <button class="prev">&#10094;</button>
+      <div class="carousel-images">
+        <div class="carousel-item">
+          <img src="images/seekie_1.jpg" alt="Seekie 1" />
+          <p class="carousel-description">Seekie during its early trials.</p>
+        </div>
+        <div class="carousel-item">
+          <img src="images/seekie_2.jpg" alt="Seekie 2" />
+          <p class="carousel-description">Seekie overcoming obstacles.</p>
+        </div>
+        <div class="carousel-item">
+          <img src="images/seekie_3.jpg" alt="Seekie 3" />
+          <p class="carousel-description">Seekie navigating tricky paths.</p>
+        </div>
+        <div class="carousel-item">
+          <img src="images/seekie_4.jpg" alt="Seekie 4" />
+          <p class="carousel-description">
+            Seekie on a mission in rough terrain.
+          </p>
+        </div>
       </div>
+      <button class="next">&#10095;</button>
     </section>
 
     <footer class="typing-footer">
       &copy; 2025 A pure vanilla creation by Synapsedia. All rights reserved.
     </footer>
+
+    <script src="seekie.js"></script>
   </body>
 </html>
