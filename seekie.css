@@ -110,8 +110,8 @@ footer {
 /* Carousel container */
 .carousel {
   position: relative;
-  width: 80%;
-  margin: 50px auto;
+  width: 50%;
+  margin: 20px auto;
   overflow: hidden;
 }
 
@@ -138,6 +138,9 @@ footer {
 .carousel-description {
   margin-top: 10px;
   font-size: 1rem;
-  color: #ff6600;
+  color: #00ffff;
   text-align: center;
+  background: #002b46;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
 }

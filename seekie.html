@@ -25,7 +25,7 @@
     <header>
       <h1>Seekie : A Crawler Robot</h1>
       <p>
-        So, I wanted a remote-controlled vehicle to mess around with. A car? Eh,
+        So, I wanted a remote-controlled vehicle to play with. A car? Eh,
         they're everywhere. A drone? Nah, too pricey (Well... Seekie's metal
         chassis was kinda expensive, but not *that* much). A tank? Now we're
         talking! But not just any tank – a blue one! And that's how Seekie came
@@ -41,61 +41,138 @@
       </p>
     </header>
 
-    <section id="video">
-      <h2>Watch Seekie in Action</h2>
-      <video width="80%" controls>
-        <source src="videos/seekie_climb.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </section>
-    <h2>Seekie Gallery</h2>
-    <section id="images">
-      <div class="image-card">
-        <img src="images/seekie_1.jpg" alt="Seekie Robot in Action" />
-        <p>Seekie navigating through rough terrain</p>
-      </div>
-      <div class="image-card">
-        <img src="images/seekie_2.jpg" alt="Seekie on a Mission" />
-        <p>Seekie on a reconnaissance mission</p>
-      </div>
-      <div class="image-card">
-        <img src="images/seekie_3.jpg" alt="Seekie Crawler in Motion" />
-        <p>Seekie crawling through narrow spaces</p>
-      </div>
-      <div class="image-card">
-        <img src="images/seekie_4.jpg" alt="Seekie Robot in Action" />
-        <p>Seekie navigating through rough terrain</p>
-      </div>
-      <div class="image-card">
-        <img src="images/seekie_5.jpg" alt="Seekie on a Mission" />
-        <p>Seekie on a reconnaissance mission</p>
-      </div>
-    </section>
-
     <h2>Seekie life timeline</h2>
     <section class="carousel">
       <button class="prev">&#10094;</button>
       <div class="carousel-images">
         <div class="carousel-item">
-          <img src="images/seekie_1.jpg" alt="Seekie 1" />
-          <p class="carousel-description">Seekie during its early trials.</p>
-        </div>
-        <div class="carousel-item">
-          <img src="images/seekie_2.jpg" alt="Seekie 2" />
-          <p class="carousel-description">Seekie overcoming obstacles.</p>
-        </div>
-        <div class="carousel-item">
-          <img src="images/seekie_3.jpg" alt="Seekie 3" />
-          <p class="carousel-description">Seekie navigating tricky paths.</p>
-        </div>
-        <div class="carousel-item">
-          <img src="images/seekie_4.jpg" alt="Seekie 4" />
+          <img src="images/seekie_timeline_1.jpg" alt="Seekie 1" />
           <p class="carousel-description">
-            Seekie on a mission in rough terrain.
+            "Seekie's chassis arrives!" – The foundation of Seekie, fresh from
+            its shipment, marking the beginning of its journey.
+          </p>
+        </div>
+        <div class="carousel-item">
+          <img src="images/seekie_timeline_2.jpg" alt="Seekie 2" />
+          <p class="carousel-description">
+            "Powering up!" – The motor driver and batteries are integrated,
+            breathing life into Seekie's movement.
+          </p>
+        </div>
+        <div class="carousel-item">
+          <img src="images/seekie_timeline_3.jpg" alt="Seekie 3" />
+          <p class="carousel-description">
+            "Brains onboard!" – A Raspberry Pi 3 is mounted onto the chassis,
+            laying the groundwork for intelligence and control.
+          </p>
+        </div>
+        <div class="carousel-item">
+          <img src="images/seekie_timeline_4.jpg" alt="Seekie 4" />
+          <p class="carousel-description">
+            "Vision activated!" – With the Raspberry Pi and a camera installed,
+            Seekie is now equipped with vision and full power connectivity.
+          </p>
+        </div>
+        <div class="carousel-item">
+          <img src="images/seekie_timeline_5.jpg" alt="Seekie 3" />
+          <p class="carousel-description">
+            "Lighting the way!" – Seekie shines in the dark with its headlights,
+            ready for night-time exploration.
+          </p>
+        </div>
+        <div class="carousel-item">
+          <img src="images/seekie_timeline_6.jpg" alt="Seekie 3" />
+          <p class="carousel-description">
+            "Seekie functional!" – Now fully app-controlled, Seekie navigates
+            the world with precision.
           </p>
         </div>
       </div>
       <button class="next">&#10095;</button>
+    </section>
+
+    <section id="video">
+      <h2>Watch Seekie in Action</h2>
+      <!-- <video width="80%" controls>
+        <source src="videos/seekie_climb.webm" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video> -->
+      <iframe
+        width="60%"
+        height="500"
+        src="https://www.youtube.com/embed/F3xQvn3qKEo?si=x7eHXqzldRoqYEWI&mute=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+    <h2 style="text-align: center">Seekie's App</h2>
+    <section
+      id="app"
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      "
+    >
+      <img
+        src="images/seekie_app.png"
+        alt="app"
+        style="max-width: 100%; height: auto"
+      />
+      <p
+        style="font-family: Roboto, sans-serif; width: 50%; text-align: center"
+      >
+        The Seekie app is a simple yet powerful tool that lets you control
+        Seekie right from your phone. You can move Seekie forward, backward,
+        left, and right, and most importantly control the tracks independently
+        at any speed you want! You can also see through Seekie's eyes using the
+        camera and even make its headlights blink. Designed to be user-friendly
+        and intuitive, the app lets you take full control of Seekie with ease.
+      </p>
+    </section>
+
+    <h2>Seekie Gallery</h2>
+    <section id="images">
+      <div class="image-card">
+        <img src="images/seekie_1.jpg" alt="Seekie in good shape" />
+        <p>Seekie in good shape</p>
+      </div>
+      <div class="image-card">
+        <img src="images/seekie_2.jpg" alt="Seekie's face" />
+        <p>Seekie's face</p>
+      </div>
+      <div class="image-card">
+        <img src="images/seekie_3.jpg" alt="Kinda top view" />
+        <p>Kinda top view</p>
+      </div>
+      <div class="image-card">
+        <img src="images/seekie_4.jpg" alt="Side shots" />
+        <p>Side shots</p>
+      </div>
+      <div class="image-card">
+        <img src="images/seekie_5.jpg" alt="Glamour!!" />
+        <p>Glamour!!</p>
+      </div>
+      <div class="image-card">
+        <img src="images/seekie_6.jpg" alt="Red back" />
+        <p>Red back</p>
+      </div>
+      <div class="image-card">
+        <img src="images/seekie_7.jpg" alt="Random shots in the garage" />
+        <p>Random shots in the garage</p>
+      </div>
+      <div class="image-card">
+        <img src="images/seekie_8.jpg" alt="Beast mode!" />
+        <p>Beast mode!</p>
+      </div>
+      <div class="image-card">
+        <img src="images/schematic.png" alt="app" />
+        <p>Seekie's Veins</p>
+      </div>
     </section>
 
     <footer class="typing-footer">

@@ -53,18 +53,17 @@ header p {
 }
 
 #images {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 70px;
   margin: 40px auto;
+  max-width: 80%;
 }
 
 .image-card {
   background-color: #222;
   border: 2px solid #ff007b;
-  width: 30%;
-  margin: 20px;
-  padding: 10px;
+
   box-shadow: 0px 0px 10px #ff007b;
 }
 

@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PDF Viewer</title>
+    <title>About Me</title>
+    <link rel="icon" href="images/tank.png" type="image/x-icon" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
@@ -18,12 +20,19 @@
         margin-bottom: 30px;
       }
 
+      #pdf-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+      }
+
       .pdf-page {
-        display: inline-block;
-        margin: 30px auto;
-        background-color: #ffffff; /* Optional: Background for better visuals */
-        box-sizing: border-box; /* Includes padding in width/height calculations */
-        max-width: 70%; /* Ensure it doesn't go beyond the viewport width */
+        display: block;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        max-width: 70%;
         border: 1px solid #ddd;
       }
 
@@ -32,35 +41,60 @@
         width: 100%;
         height: auto;
       }
+
+      .download-button {
+        display: inline-block;
+        margin: 30px auto;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #00c2c2;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .download-button:hover {
+        background-color: #008080;
+      }
     </style>
   </head>
   <body>
     <div id="navbar"></div>
 
+    <div id="container">
+      <button class="download-button" onclick="window.open(pdfUrl, '_blank')">
+        Download PDF
+      </button>
+      <div id="pdf-container"></div>
+    </div>
+
     <script>
-      const pdfUrl = "pdf/Shamila_Jeewantha.pdf"; // Replace with your PDF file path
+      const pdfUrl = "pdf/Shamila_Jeewantha.pdf";
 
       const renderPDF = async (url) => {
         const loadingTask = pdfjsLib.getDocument(url);
         const pdf = await loadingTask.promise;
 
+        const pdfContainer = document.getElementById("pdf-container");
+        pdfContainer.innerHTML = "";
+
         for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
           const page = await pdf.getPage(pageNum);
 
-          // Set a higher scale for sharper rendering
-          const scale = 4; // Adjust as needed for better quality
+          const scale = 4;
           const viewport = page.getViewport({ scale });
 
-          // Create canvas element for each page
           const canvas = document.createElement("canvas");
           canvas.classList.add("pdf-page");
-          document.body.appendChild(canvas);
+          pdfContainer.appendChild(canvas);
 
           const context = canvas.getContext("2d");
           canvas.width = viewport.width;
           canvas.height = viewport.height;
 
-          // Render PDF page on canvas
           await page.render({
             canvasContext: context,
             viewport: viewport,
@@ -71,14 +105,12 @@
       renderPDF(pdfUrl);
     </script>
     <script>
-      // Load the navbar and include the navbar CSS
       fetch("navbar.html")
         .then((response) => response.text())
         .then((data) => {
           const navbarDiv = document.getElementById("navbar");
           navbarDiv.innerHTML = data;
 
-          // Dynamically load the navbar.css file
           const navbarStyle = document.createElement("link");
           navbarStyle.rel = "stylesheet";
           navbarStyle.href = "navbar.css";
