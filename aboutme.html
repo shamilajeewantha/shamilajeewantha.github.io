@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Orbitron", sans-serif;
+        background-color: #0d0d0d;
+        color: #00ffff;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .pdf-page {
+        display: inline-block;
+        margin: 30px auto;
+        background-color: #ffffff; /* Optional: Background for better visuals */
+        box-sizing: border-box; /* Includes padding in width/height calculations */
+        max-width: 70%; /* Ensure it doesn't go beyond the viewport width */
+        border: 1px solid #ddd;
+      }
+
+      canvas {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <script>
+      const pdfUrl = "pdf/Shamila_Jeewantha.pdf"; // Replace with your PDF file path
+
+      const renderPDF = async (url) => {
+        const loadingTask = pdfjsLib.getDocument(url);
+        const pdf = await loadingTask.promise;
+
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+          const page = await pdf.getPage(pageNum);
+
+          // Set a higher scale for sharper rendering
+          const scale = 4; // Adjust as needed for better quality
+          const viewport = page.getViewport({ scale });
+
+          // Create canvas element for each page
+          const canvas = document.createElement("canvas");
+          canvas.classList.add("pdf-page");
+          document.body.appendChild(canvas);
+
+          const context = canvas.getContext("2d");
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+
+          // Render PDF page on canvas
+          await page.render({
+            canvasContext: context,
+            viewport: viewport,
+          }).promise;
+        }
+      };
+
+      renderPDF(pdfUrl);
+    </script>
+    <script>
+      // Load the navbar and include the navbar CSS
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          const navbarDiv = document.getElementById("navbar");
+          navbarDiv.innerHTML = data;
+
+          // Dynamically load the navbar.css file
+          const navbarStyle = document.createElement("link");
+          navbarStyle.rel = "stylesheet";
+          navbarStyle.href = "navbar.css";
+          document.head.appendChild(navbarStyle);
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+  </body>
+</html>
